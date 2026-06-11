@@ -8,7 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { nixpkgs, home-manager, ... }: {
+  outputs = { nixpkgs, home-manager, ... } @ inputs: {
     nixosConfigurations.nix = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -18,9 +18,9 @@
 	home-manager = {
             useGlobalPkgs = true;
 	    useUserPackages = true;
+	    extraSpecialArgs = { inherit inputs; };
 	    users.hayden = import ./home.nix;
 	    backupFileExtension = "backup";
-	    extraSpecialArgs = { inherit inputs; };
 	  };
 	}
       ];
