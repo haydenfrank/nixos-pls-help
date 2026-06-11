@@ -1,0 +1,28 @@
+building the system configuration...
+Checking switch inhibitors... done
+activating the configuration...
+setting up /etc...
+reloading user units for hayden...
+restarting the following user units: nixos-activation.service
+restarting sysinit-reactivation.target
+the following new units were started: NetworkManager-dispatcher.service
+warning: the following units failed: home-manager-hayden.service
+× home-manager-hayden.service - Home Manager environment for hayden
+     Loaded: loaded (/etc/systemd/system/home-manager-hayden.service; enabled; preset: ignored)
+     Active: failed (Result: core-dump) since Thu 2026-06-11 21:08:19 JST; 273ms ago
+ Invocation: 1aba48a490794e28b65e37f7d1a17964
+    Process: 4772 ExecStart=/nix/store/029g69vs1qf2fcpqlfcv5qgfyp45yv41-hm-setup-env /nix/store/05p19ffk43xxfxlv6049dh61pcbign6v-home-manager-generation (code=dumped, signal=ABRT)
+   Main PID: 4772 (code=dumped, signal=ABRT)
+         IP: 0B in, 0B out
+         IO: 0B read, 0B written
+   Mem peak: 12.3M
+        CPU: 137ms
+
+Jun 11 21:08:19 nix systemd[1]: Starting Home Manager environment for hayden...
+Jun 11 21:08:19 nix hm-activate-hayden[4772]: CRIT ]: Critical error thrown: XDG_RUNTIME_DIR is not set!
+Jun 11 21:08:19 nix hm-activate-hayden[4772]: terminate called after throwing an instance of 'std::runtime_error'
+Jun 11 21:08:19 nix hm-activate-hayden[4772]:   what():  XDG_RUNTIME_DIR is not set!
+Jun 11 21:08:19 nix systemd[1]: home-manager-hayden.service: Main process exited, code=dumped, status=6/ABRT
+Jun 11 21:08:19 nix systemd[1]: home-manager-hayden.service: Failed with result 'core-dump'.
+Jun 11 21:08:19 nix systemd[1]: Failed to start Home Manager environment for hayden.
+Command 'systemd-run -E LOCALE_ARCHIVE -E NIXOS_INSTALL_BOOTLOADER -E NIXOS_NO_CHECK --collect --no-ask-password --pipe --quiet --service-type=exec --unit=nixos-rebuild-switch-to-configuration /nix/store/8j2rypl5yfykphkw1gpkpzxmdqp4d1dp-nixos-system-nix-26.11.20260606.a799d3e/bin/switch-to-configuration switch' returned non-zero exit status 4.
