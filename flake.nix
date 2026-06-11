@@ -20,6 +20,7 @@
 	    useUserPackages = true;
 	    users.hayden = import ./home.nix;
 	    backupFileExtension = "backup";
+	    extraSpecialArgs = { inherit inputs; };
 	  };
 	}
       ];
