@@ -13,5 +13,8 @@
     };
   };
   home.file.".config/nvim".source = ./config/nvim;
-  # home.file.".config/hypr".source = ./config/hypr;
+  home.file.".config/hypr" = {
+    source = ./config/hypr;
+    recursive = true;
+  };
 }

@@ -1,0 +1,160 @@
+--------------------------------------------
+   Hyprland Crash Report
+--------------------------------------------
+Calm down, it was a misinput! MISINPUT!
+
+Hyprland received signal 11(SEGV)
+Version: 39d7e209c79d451efab1b21151d5938289da838d
+Tag: v0.55.2
+Date: 2026-05-16
+Flags:
+
+System info:
+	System name: Linux
+	Node name: nix
+	Release: 6.18.34
+	Version: #1-NixOS SMP PREEMPT_DYNAMIC Mon Jun  1 15:51:08 UTC 2026
+
+GPU:
+	00:01.0 VGA compatible controller [0300]: Red Hat, Inc. QXL paravirtual graphic card [1b36:0100] (rev 05) (prog-if 00 [VGA controller])
+05:00.0 3D controller [0302]: NVIDIA Corporation AD107M [GeForce RTX 4050 Max-Q / Mobile] [10de:28a1] (rev a1)
+
+
+os-release:
+	ANSI_COLOR="0;38;2;126;186;228"
+	BUG_REPORT_URL="https://github.com/NixOS/nixpkgs/issues"
+	BUILD_ID="26.11.20260606.a799d3e"
+	CPE_NAME="cpe:/o:nixos:nixos:26.11"
+	DEFAULT_HOSTNAME=nixos
+	DOCUMENTATION_URL="https://nixos.org/learn.html"
+	HOME_URL="https://nixos.org/"
+	ID=nixos
+	ID_LIKE=""
+	IMAGE_ID=""
+	IMAGE_VERSION=""
+	LOGO="nix-snowflake"
+	NAME=NixOS
+	PRETTY_NAME="NixOS 26.11 (Zokor)"
+	SUPPORT_URL="https://nixos.org/community.html"
+	VARIANT=""
+	VARIANT_ID=""
+	VENDOR_NAME=NixOS
+	VENDOR_URL="https://nixos.org/"
+	VERSION="26.11 (Zokor)"
+	VERSION_CODENAME=zokor
+	VERSION_ID="26.11"
+
+Libraries:
+Hyprgraphics: built against 0.5.1, system has unknown
+Hyprutils: built against 0.13.1, system has unknown
+Hyprcursor: built against 0.1.13, system has unknown
+Hyprlang: built against 0.6.8, system has unknown
+Aquamarine: built against 0.12.0, system has unknown
+
+Backtrace:
+	# | /nix/store/x33kxnsb6igzadyf5s7cw4ih6ivfx6k0-hyprland-0.55.2/bin/Hyprland(_Z12getBacktracev+0x5c) [0x6084f3be103c]
+		getBacktrace()
+		??:?
+	#1 | /nix/store/x33kxnsb6igzadyf5s7cw4ih6ivfx6k0-hyprland-0.55.2/bin/Hyprland(_ZN13CrashReporter18createAndSaveCrashEi+0xb34) [0x6084f3ae04e4]
+		CrashReporter::createAndSaveCrash(int)
+		??:?
+	#2 | /nix/store/x33kxnsb6igzadyf5s7cw4ih6ivfx6k0-hyprland-0.55.2/bin/Hyprland(+0x406085) [0x6084f38e7085]
+		handleUnrecoverableSignal(int)
+		??:?
+	#3 | /nix/store/57iz36553175g3178pvxjij8z5rcsd4n-glibc-2.42-61/lib/libc.so.6(+0x42790) [0x7263bba42790]
+		??
+		??:0
+	#4 | /nix/store/ccsw7fb5m1mhjc0xnd832zpm2hk1mp78-hyprutils-0.13.1/lib/libhyprutils.so.12(_ZNK9Hyprutils2OS15CFileDescriptor9duplicateEi+0xc) [0x7263be3f4cfc]
+		??
+		??:0
+	#5 | /nix/store/x33kxnsb6igzadyf5s7cw4ih6ivfx6k0-hyprland-0.55.2/bin/Hyprland(_ZN22CMonitorFrameScheduler14onFinishRenderEv+0x108) [0x6084f3c1cb08]
+		CMonitorFrameScheduler::onFinishRender()
+		??:?
+	#6 | /nix/store/x33kxnsb6igzadyf5s7cw4ih6ivfx6k0-hyprland-0.55.2/bin/Hyprland(_ZN22CMonitorFrameScheduler7onFrameEv+0x1bc) [0x6084f3c1e4ec]
+		CMonitorFrameScheduler::onFrame()
+		??:?
+	#7 | /nix/store/ccsw7fb5m1mhjc0xnd832zpm2hk1mp78-hyprutils-0.13.1/lib/libhyprutils.so.12(_ZN9Hyprutils6Signal15CSignalListener12emitInternalEPv+0x29) [0x7263be3fdcd9]
+		??
+		??:0
+	#8 | /nix/store/ccsw7fb5m1mhjc0xnd832zpm2hk1mp78-hyprutils-0.13.1/lib/libhyprutils.so.12(_ZN9Hyprutils6Signal11CSignalBase12emitInternalEPv+0x2f3) [0x7263be3fe0b3]
+		??
+		??:0
+	#9 | /nix/store/ckynw31pxvrb4bdbli1adk4dhfifda9q-aquamarine-0.12.0/lib/libaquamarine.so.11(+0xc0e92) [0x7263be51ce92]
+		??
+		??:0
+	#1 | /nix/store/8fbsxg75a01nm3ivxg8kl3zxd7wx34p2-libdrm-2.4.133/lib/libdrm.so.2(drmHandleEvent+0x140) [0x7263bde56be0]
+		??
+		??:0
+	#11 | /nix/store/ckynw31pxvrb4bdbli1adk4dhfifda9q-aquamarine-0.12.0/lib/libaquamarine.so.11(+0xc5956) [0x7263be521956]
+		??
+		??:0
+	#12 | /nix/store/x33kxnsb6igzadyf5s7cw4ih6ivfx6k0-hyprland-0.55.2/bin/Hyprland(+0x8d7656) [0x6084f3db8656]
+		aquamarineFDWrite(int, unsigned int, void*)
+		??:?
+	#13 | /nix/store/b89rbd2k8k3a8va6xkmh4nizgrpwv0y4-wayland-1.25.0/lib/libwayland-server.so.0(wl_event_loop_dispatch+0x1c2) [0x7263be28d312]
+		??
+		??:0
+	#14 | /nix/store/b89rbd2k8k3a8va6xkmh4nizgrpwv0y4-wayland-1.25.0/lib/libwayland-server.so.0(wl_display_run+0x25) [0x7263be28a795]
+		??
+		??:0
+	#15 | /nix/store/x33kxnsb6igzadyf5s7cw4ih6ivfx6k0-hyprland-0.55.2/bin/Hyprland(_ZN17CEventLoopManager9enterLoopEv+0x2ba) [0x6084f3dbba1a]
+		CEventLoopManager::enterLoop()
+		??:?
+	#16 | /nix/store/x33kxnsb6igzadyf5s7cw4ih6ivfx6k0-hyprland-0.55.2/bin/Hyprland(main+0x1324) [0x6084f38d6704]
+		main
+		??:?
+	#17 | /nix/store/57iz36553175g3178pvxjij8z5rcsd4n-glibc-2.42-61/lib/libc.so.6(+0x2b285) [0x7263bba2b285]
+		??
+		??:0
+	#18 | /nix/store/57iz36553175g3178pvxjij8z5rcsd4n-glibc-2.42-61/lib/libc.so.6(__libc_start_main+0x88) [0x7263bba2b338]
+		??
+		??:0
+	#19 | /nix/store/x33kxnsb6igzadyf5s7cw4ih6ivfx6k0-hyprland-0.55.2/bin/Hyprland(_start+0x25) [0x6084f38cefe5]
+		_start
+		??:?
+
+
+Log tail:
+ERR from aquamarine ]: Couldn't get the gamma_size prop
+DEBUG from aquamarine ]: drm: Modesetting Virtual-1 with 1024x768@60.00Hz
+ERR from aquamarine ]: drm: Cannot commit when a page-flip is awaiting
+DEBUG from aquamarine ]: drm: Modesetting Virtual-1 with 1024x768@60.00Hz
+ERR from aquamarine ]: drm: Cannot commit when a page-flip is awaiting
+DEBUG from aquamarine ]: backend: poll fd 16 for implementation headless
+DEBUG from aquamarine ]: backend: poll fd 28 for implementation drm
+DEBUG from aquamarine ]: backend: poll fd 17 for session
+DEBUG from aquamarine ]: backend: poll fd 19 for session
+DEBUG from aquamarine ]: backend: poll fd 20 for session
+DEBUG from aquamarine ]: backend: poll fd 23 for idle
+DEBUG from aquamarine ]: udev: new udev change event for card1
+DEBUG from aquamarine ]: udev: DRM device card1 changed
+DEBUG from aquamarine ]: drm: Got a lease event for /dev/dri/card1
+DEBUG from aquamarine ]: libinput: New device Power Button: 0-1
+DEBUG from aquamarine ]: libinput: New device QEMU QEMU USB Tablet: 1575-1
+DEBUG from aquamarine ]: libinput: New device AT Translated Set 2 keyboard: 1-1
+DEBUG from aquamarine ]: libinput: New device ImExPS/2 Generic Explorer Mouse: 2-6
+ERR from aquamarine ]: drm: No Adaptive sync support for output
+DEBUG from aquamarine ]: drm: Modesetting Virtual-1 with 1024x768@60.00Hz
+ERR from aquamarine ]: drm: Cannot commit when a page-flip is awaiting
+ERR from aquamarine ]: atomic drm: failed to commit ctm: no ctm prop support
+ERR from aquamarine ]: atomic drm: failed to commit ctm: no ctm prop support
+DEBUG from aquamarine ]: drm: Modesetting Virtual-1 with 1024x768@60.00Hz
+ERR from aquamarine ]: atomic drm: failed to commit ctm: no ctm prop support
+DEBUG from aquamarine ]: Supported EGL client extensions: (16) EGL_EXT_device_base EGL_EXT_device_enumeration EGL_EXT_device_query EGL_EXT_platform_base EGL_KHR_client_get_all_proc_addresses EGL_EXT_client_extensions EGL_KHR_debug EGL_EXT_platform_device EGL_EXT_explicit_device EGL_EXT_platform_wayland EGL_KHR_platform_wayland EGL_EXT_platform_x11 EGL_KHR_platform_x11 EGL_EXT_platform_xcb EGL_MESA_platform_gbm EGL_KHR_platform_gbm EGL_MESA_platform_surfaceless
+ERR from aquamarine ]: [EGL] Command eglQueryDeviceStringEXT errored out with EGL_BAD_PARAMETER (0x12300): eglQueryDeviceStringEXT
+ERR from aquamarine ]: [EGL] Command eglQueryDeviceStringEXT errored out with EGL_BAD_PARAMETER (0x12300): eglQueryDeviceStringEXT
+ERR from aquamarine ]: CDRMRenderer(drm): Can't create renderer, no matching devices found
+ERR from aquamarine ]: drm: initMgpu: no renderer
+ERR from aquamarine ]: drm: Failed to update renderer state for Virtual-1 on applyCommit
+ERR from aquamarine ]: Couldn't get the gamma_size prop
+ERR from aquamarine ]: drm: Cannot commit when a page-flip is awaiting
+ERR from aquamarine ]: drm: Cannot commit when a page-flip is awaiting
+ERR from aquamarine ]: drm: Cannot commit when a page-flip is awaiting
+ERR from aquamarine ]: drm: Cannot commit when a page-flip is awaiting
+DEBUG from aquamarine ]: Supported EGL client extensions: (16) EGL_EXT_device_base EGL_EXT_device_enumeration EGL_EXT_device_query EGL_EXT_platform_base EGL_KHR_client_get_all_proc_addresses EGL_EXT_client_extensions EGL_KHR_debug EGL_EXT_platform_device EGL_EXT_explicit_device EGL_EXT_platform_wayland EGL_KHR_platform_wayland EGL_EXT_platform_x11 EGL_KHR_platform_x11 EGL_EXT_platform_xcb EGL_MESA_platform_gbm EGL_KHR_platform_gbm EGL_MESA_platform_surfaceless
+ERR from aquamarine ]: [EGL] Command eglQueryDeviceStringEXT errored out with EGL_BAD_PARAMETER (0x12300): eglQueryDeviceStringEXT
+ERR from aquamarine ]: [EGL] Command eglQueryDeviceStringEXT errored out with EGL_BAD_PARAMETER (0x12300): eglQueryDeviceStringEXT
+ERR from aquamarine ]: CDRMRenderer(drm): Can't create renderer, no matching devices found
+ERR from aquamarine ]: drm: initMgpu: no renderer
+ERR from aquamarine ]: drm: Failed to update renderer state for Virtual-1 on applyCommit
+ERR from aquamarine ]: [EGL] Command eglCreateSyncKHR errored out with EGL_BAD_MATCH (0x12297): _eglCreateSync
