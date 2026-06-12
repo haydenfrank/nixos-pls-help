@@ -1,8 +1,8 @@
 hl.monitor({
 	output = "",
-	mode = "preferred",
+	mode = "1920x1200@60",
 	position = "auto",
-	scale = 1,
+	scale = 1.25,
 })
 
 hl.on("hyprland.start", function()
