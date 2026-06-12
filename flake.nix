@@ -8,23 +8,26 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { nixpkgs, home-manager, ... } @ inputs: {
+  outputs = {
+    nixpkgs,
+    home-manager,
+    ...
+  } @ inputs: {
     nixosConfigurations.nix = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
-	home-manager.nixosModules.home-manager
-	{
-	home-manager = {
+        home-manager.nixosModules.home-manager
+        {
+          home-manager = {
             useGlobalPkgs = true;
-	    useUserPackages = true;
-	    extraSpecialArgs = { inherit inputs; };
-	    users.hayden = import ./home.nix;
-	    backupFileExtension = "backup";
-	  };
-	}
+            useUserPackages = true;
+            extraSpecialArgs = {inherit inputs;};
+            users.hayden = import ./home.nix;
+            backupFileExtension = "backup";
+          };
+        }
       ];
     };
   };
 }
-
