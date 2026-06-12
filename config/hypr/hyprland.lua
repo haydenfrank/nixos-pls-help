@@ -1,6 +1,12 @@
-require("modules.monitors")
-require("modules.env")
-require("modules.keybinds")
-require("modules.execs")
-require("modules.general")
-require("modules.rules")
+hl.monitor({
+	output = "",
+	mode = "preferred",
+	position = "auto",
+	scale = 1,
+})
+
+hl.on("hyprland.start", function()
+	hl.exec_cmd("kitty")
+
+
+end)
