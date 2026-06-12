@@ -12,4 +12,5 @@
       btw = "echo i use hyprland btw";
     };
   };
+  home.file.".config/nvim".source = ./config/nvim;
 }
