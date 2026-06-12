@@ -13,4 +13,5 @@
     };
   };
   home.file.".config/nvim".source = ./config/nvim;
+  home.file.".config/hypr".source = ./config/hypr;
 }
