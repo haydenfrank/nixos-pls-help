@@ -10,3 +10,5 @@ hl.on("hyprland.start", function()
 
 
 end)
+
+require("modules.keybinds")

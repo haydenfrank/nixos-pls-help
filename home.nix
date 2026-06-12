@@ -10,6 +10,7 @@
     enable = true;
     shellAliases = {
       btw = "echo i use hyprland btw";
+      nrs = "sudo nixos-rebuild switch --flake ~/dots#nix";
     };
   };
   home.file.".config/nvim".source = ./config/nvim;
