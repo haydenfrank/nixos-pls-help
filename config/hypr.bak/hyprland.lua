@@ -1,6 +1,0 @@
-require("modules.monitors")
-require("modules.env")
-require("modules.keybinds")
-require("modules.execs")
-require("modules.general")
-require("modules.rules")

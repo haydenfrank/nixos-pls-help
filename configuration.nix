@@ -43,6 +43,7 @@
     hyprpaper
     neovim
     gh
+    love
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
