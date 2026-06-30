@@ -24,6 +24,7 @@ if status is-interactive # Commands to run in interactive sessions can go here
     alias q 'qs -c ii'
     alias gl "git log --oneline --pretty=oneline"
     alias gco "git checkout"
+    alias nrs "sudo nixos-rebuild switch --flake ~/dots#nix"
 end
 
 # opencode
