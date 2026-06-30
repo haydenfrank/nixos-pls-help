@@ -14,7 +14,7 @@
   networking.hostName = "nix";
   networking.networkmanager.enable = true;
 
-  time.timeZone = "Asia/Tokyo";
+  time.timeZone = "America/New_York";
 
   programs.hyprland = {
     enable = true;
@@ -40,10 +40,12 @@
     kitty
     waybar
     git
-    hyprpaper
     neovim
     gh
-    love
+    fish
+    starship
+    matugen
+    eza
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
