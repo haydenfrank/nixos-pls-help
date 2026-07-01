@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: {
   home.username = "hayden";
@@ -34,5 +35,17 @@
     source = ./config/waybar;
     recursive = true;
   };
+  home.file.".config/rofi" = {
+    source = ./config/rofi;
+    recursive = true;
+  };
   home.file.".config/starship.toml".source = ./config/starship.toml;
+  home.pointerCursor = {
+    name = "capitaine-cursors";
+    package = pkgs.capitaine-cursors;
+    size = 32;
+    gtk.enable = true;
+    x11.enable = true;
+  };
+  imports = [ inputs.flatpaks.homeModules.default ];
 }

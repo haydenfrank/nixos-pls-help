@@ -102,7 +102,7 @@ hl.bind(mainMod .. " + SUPER_L", hl.dsp.exec_cmd("pgrep rofi && pkill rofi || ro
 hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("~/.config/hypr/scripts/wallpaper-selector.sh"))
 
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("steam"))
-hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("ELECTRON_OZONE_PLATFORM_HINT= discord"))
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("flatpak run com.discordapp.Discord"))
 hl.bind(
 	mainMod .. " + T",
 	hl.dsp.exec_cmd("flatpak run com.spotify.Client --remote-debugging-port=9222 --remote-allow-origins='*'")
