@@ -1,8 +1,8 @@
 [config]
 
-# [config.wallpaper]
-# command = "awww img {{ image }} -t wipe --transition-fps 165 --transition-duration 0.3"
-# set = true
+[config.wallpaper]
+command = "awww img {{ image }} -t wipe --transition-fps 165 --transition-duration 0.3"
+set = true
 
 [templates.hyprland]
 input_path = '~/.config/matugen/templates/hyprland-colors.lua'
