@@ -18,6 +18,10 @@
     source = ./config/nvim;
     recursive = true;
   };
+  home.file.".config/swaync" = {
+    source = ./config/swaync;
+    recursive = true;
+  };
   home.file.".config/hypr" = {
     source = ./config/hypr;
     recursive = true;

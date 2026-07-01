@@ -28,9 +28,13 @@
     packages = with pkgs; [
       tree
       prismlauncher
+      rofi
+      pywalfox-native
+      swaynotificationcenter
     ];
   };
 
+  services.locate.enable = true;
   services.displayManager.ly.enable = true;
 
   programs.firefox.enable = true;
@@ -53,6 +57,7 @@
     mesa-demos
     psmisc
     capitaine-cursors
+    libnotify
   ];
 
   services.flatpak = {
@@ -65,7 +70,20 @@
     packages = [
       "flathub:app/com.discordapp.Discord/x86_64/stable"
       "flathub:app/org.mozilla.firefox/x86_64/stable"
+      "flathub:app/com.spotify.Client/x86_64/stable"
     ];
+    overrides = {
+      "org.mozilla.firefox" = {
+        SessionBusPolicy = {
+          "org.freedesktop.Flatpak" = "talk";
+          "org.freedesktop.portal.Flatpak" = "talk";
+        };
+
+        SystemBusPolicy = {
+          "org.freedesktop.Flatpak" = "talk";
+        };
+      };
+    };
   };
 
   fonts.packages = with pkgs; [
@@ -104,6 +122,8 @@
   environment.variables = {
     HYPRCURSOR_THEME = "capitaine-cursors";
     HYPRCURSOR_SIZE = "32";
+    XCURSOR_THEME = "capitaine-cursors";
+    XCURSOR_SIZE = "32";
   };
 
   system.stateVersion = "26.05";

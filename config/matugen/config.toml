@@ -50,10 +50,10 @@ post_hook = "kitty +kitten themes --reload-in=all Matugen"
 input_path = '~/.config/matugen/templates/rofi-colors.rasi'
 output_path = '~/.config/rofi/colors.rasi'
 #
-# [templates.swaync]
-# input_path = "~/.config/matugen/templates/colors.css"
-# output_path = "~/.config/swaync/colors.css"
-# post_hook = "swaync-client -rs"
+[templates.swaync]
+input_path = "~/.config/matugen/templates/colors.css"
+output_path = "~/.config/swaync/colors.css"
+post_hook = "swaync-client -rs"
 #
 # [templates.nvim]
 # input_path = '~/.config/matugen/templates/nvim-colors.json'
@@ -68,10 +68,10 @@ output_path = '~/.config/rofi/colors.rasi'
 # input_path = '~/.config/matugen/templates/prismlauncher.json'
 # output_path = '~/.local/share/PrismLauncher/themes/Matugen/theme.json'
 #
-# [templates.pywalfox]
-# input_path = '~/.config/matugen/templates/pywalfox-colors.json'
-# output_path = '~/.cache/wal/colors.json'
-# post_hook = 'pywalfox update'
+[templates.pywalfox]
+input_path = '~/.config/matugen/templates/pywalfox-colors.json'
+output_path = '~/.cache/wal/colors.json'
+post_hook = 'pywalfox update'
 #
 # [templates.btop]
 # input_path = '~/.config/matugen/templates/btop.theme'

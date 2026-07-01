@@ -20,7 +20,8 @@
 
   "hyprland/workspaces": {
     "active-only": true,
-    "format": " {icon} {windows}",
+    "format": "{icon}{windows}",
+    "format-window-separator": " ",
     "window-rewrite-default": "",
     "persistent-workspaces": {
       "*": [1, 2, 3, 4, 5]
@@ -35,9 +36,9 @@
       "Zoom": ""
     },
     "all-outputs": true,
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1",
-    "on-click": "activate"
+    "on-scroll-up": "hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"+1\" }))'",
+    "on-scroll-down": "hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"-1\" }))'",
+    "on-click": "~/dots/config/waybar/scripts/focusworkspace.sh {button}"
   },
   "pulseaudio": {
     "format": "{volume}% {icon}",
