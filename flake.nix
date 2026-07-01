@@ -38,7 +38,7 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             extraSpecialArgs = {inherit inputs;};
-            users.hayden = import ./home.nix;
+            users.hayden = import ./home/hayden.nix;
             backupFileExtension = "backup";
           };
         }
