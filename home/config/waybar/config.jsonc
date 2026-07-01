@@ -20,7 +20,7 @@
 
   "hyprland/workspaces": {
     "active-only": true,
-    "format": "{icon}{windows}",
+    "format": " {icon} {windows}",
     "format-window-separator": " ",
     "window-rewrite-default": "",
     "persistent-workspaces": {
