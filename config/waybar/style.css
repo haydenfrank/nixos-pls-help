@@ -68,7 +68,6 @@ window#waybar {
 /* Hover */
 #workspaces button:hover {
     background-color: @surface_container_highest;
-    color: @on_surface_container_highest;
 }
 
 

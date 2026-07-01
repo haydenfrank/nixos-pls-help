@@ -37,8 +37,7 @@
     },
     "all-outputs": true,
     "on-scroll-up": "hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"+1\" }))'",
-    "on-scroll-down": "hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"-1\" }))'",
-    "on-click": "~/dots/config/waybar/scripts/focusworkspace.sh {button}"
+    "on-scroll-down": "hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"-1\" }))'"
   },
   "pulseaudio": {
     "format": "{volume}% {icon}",

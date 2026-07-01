@@ -13,10 +13,16 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, apple-fonts, ... } @ inputs: {
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    apple-fonts,
+    ...
+  } @ inputs: {
     nixosConfigurations.nix = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
- 
+
       specialArgs = {
         inherit inputs;
       };
@@ -31,7 +37,7 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            extraSpecialArgs = { inherit inputs; };
+            extraSpecialArgs = {inherit inputs;};
             users.hayden = import ./home.nix;
             backupFileExtension = "backup";
           };

@@ -51,5 +51,6 @@
     gtk.enable = true;
     x11.enable = true;
   };
+  programs.waybar.enable = true;
   imports = [ inputs.flatpaks.homeModules.default ];
 }
